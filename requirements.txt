@@ -1,0 +1,8 @@
+pydub
+ffmpeg
+langchain
+langchain_groq
+deepgram
+python-dotenv
+streamlit
+numpy
