@@ -8,14 +8,11 @@ from dotenv import load_dotenv
 import random
 from io import BytesIO
 import streamlit as st
-import imageio_ffmpeg as ffmpeg
 
 load_dotenv()
 
 os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
 os.environ["DEEPGRAM_API_KEY"] = os.environ.get("DEEPGRAM_API_KEY")
-
-AudioSegment.ffmpeg = ffmpeg.get_ffmpeg_exe()
 
 VOICES = {
     "female": ["aura-asteria-en", "aura-luna-en", "aura-stella-en"],
