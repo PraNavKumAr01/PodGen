@@ -1,9 +1,8 @@
 pydub
-ffmpeg
+ffmpeg-python
 langchain
 langchain_groq
 deepgram-sdk
 python-dotenv
 streamlit
 numpy
-imageio-ffmpeg
