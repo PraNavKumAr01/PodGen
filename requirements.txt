@@ -2,7 +2,7 @@ pydub
 ffmpeg
 langchain
 langchain_groq
-deepgram
+deepgram-sdk
 python-dotenv
 streamlit
 numpy
