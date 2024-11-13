@@ -89,15 +89,15 @@ def text_to_speech(transcript, voice_code):
         return response.stream.getvalue()
 
     except Exception as e:
-        print(f"Exception: {e}")
+        st.write(f"Exception: {e}")
 
 def generate_podcast(topic, num_speakers, male_count, female_count):
 
-    print("Generating script")
+    st.write("Generating script")
     script = get_response(topic, num_speakers, male_count, female_count)
     with open("script.json", "w") as file:
         json.dump(script, file, indent=3)
-    print("Script Generation Finished")
+    st.write("Script Generation Finished")
     
     speaker_voices = {}
     male_voices = VOICES["male"].copy()
@@ -119,7 +119,7 @@ def generate_podcast(topic, num_speakers, male_count, female_count):
         
         voice_code = speaker_voices[speaker_id]
         
-        print(f"Generating audio for speaker {speaker_id}")
+        st.write(f"Generating audio for speaker {speaker_id}")
         audio_data = text_to_speech(text, voice_code)
         
         if isinstance(audio_data, bytes):
@@ -128,7 +128,7 @@ def generate_podcast(topic, num_speakers, male_count, female_count):
         try:
             audio_segment = AudioSegment.from_file(audio_data, format="wav")
         except Exception as e:
-            print(f"Error processing segment for speaker {speaker_id}: {e}")
+            st.write(f"Error processing segment for speaker {speaker_id}: {e}")
             continue
         
         full_podcast += audio_segment
@@ -140,4 +140,4 @@ def generate_podcast(topic, num_speakers, male_count, female_count):
 
         return audio_bytes
     except Exception as e:
-        print(f"Error generating podcast: {e}")
+        st.write(f"Error generating podcast: {e}")
