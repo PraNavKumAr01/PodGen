@@ -7,6 +7,7 @@ import os
 from dotenv import load_dotenv
 import random
 from io import BytesIO
+import streamlit as st
 
 load_dotenv()
 
