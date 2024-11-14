@@ -24,7 +24,13 @@ def get_response(query, num_speakers, male_count, female_count):
     prompt = PromptTemplate(
         input_variables=["user_query", "num_speakers", "male_count", "female_count"],
         template="""
-        Generate a podcast script based on this topic: {user_query}
+        
+        You are the a world-class podcast writer, you have worked as a ghost writer for Joe Rogan, Lex Fridman, Ben Shapiro, Tim Ferris. 
+        You have won multiple podcast awards for your writing.
+        Keep the script extremely engaging, the speakers can get derailed now and then but should discuss the topic. 
+        The conversation should always have realistic anecdotes and analogies sprinkled throughout. The questions should have real world example follow ups etc
+        
+        Generate a podcast script based on this topic or content: {user_query}
         
         The podcast should have {num_speakers} speakers, with {male_count} male and {female_count} female speakers.
         
@@ -55,8 +61,7 @@ def get_response(query, num_speakers, male_count, female_count):
         - Make sure to add ... (three dots) before important things or where pauses are neccessary, you can use it plenty of times
         - Use filler words between 'um' and 'uh' to add more realistic feel of the speakers speaking. But only use 'um' and 'uh' with this exact spelling
         - Add filler words like 'um' and 'uh' regularly to keep it realistic
-        - The script should have atleast 6 segments per speaker
-        - Keep the script as long as you can, but not more than 10 segments per speaker
+        - The script should have atleast 10 segments per speaker
 
         Ensure that the script has a natural conversation flow and uses all specified speakers.
         Please start directly with the json no text before or after the json.
